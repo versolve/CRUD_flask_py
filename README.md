@@ -1,12 +1,95 @@
-Proyek Toko Buku - TB2 Pemrograman LanjutProyek ini adalah aplikasi web sederhana yang dibangun menggunakan Flask untuk mengelola dan menampilkan katalog produk buku. Aplikasi ini memiliki halaman publik untuk menampilkan produk dan dasbor admin untuk melakukan operasi CRUD (Create, Read, Update, Delete) pada produk.Tim Pengembang:Muhammad FerdiansyahFaiz Rayhan RamadhanWahyu Dwi Saputra✨ Fitur UtamaHalaman Produk Publik: Halaman utama yang menampilkan semua produk yang tersedia kepada pengguna.Halaman Detail Produk: Pengguna dapat mengklik sebuah produk untuk melihat detail yang lebih lengkap.Dasbor Admin: Halaman khusus bagi admin untuk melihat, menambah, mengedit, dan menghapus produk.Tambah Produk: Formulir untuk menambahkan produk baru beserta detail seperti nama, deskripsi, harga, stok, dan gambar.Edit Produk: Memperbarui informasi produk yang sudah ada.Hapus Produk: Menghapus produk dari katalog.Unggah Gambar: Mendukung fungsionalitas untuk mengunggah gambar produk.🛠️ Teknologi yang DigunakanBackend: Python, FlaskDatabase: Flask-SQLAlchemy, MySQL (dengan driver PyMySQL)Frontend: HTML, Bootstrap 5Server: Werkzeug (Development Server bawaan Flask)🚀 Panduan Instalasi dan PengaturanIkuti langkah-langkah berikut untuk menjalankan proyek ini di komputer lokal Anda.PrasyaratPastikan Anda telah menginstal perangkat lunak berikut:Python 3.xpip (Package installer untuk Python)Server MySQL yang sedang berjalanLangkah-langkah InstalasiClone Repositorigit clone [URL_REPOSITORI_ANDA]
-cd [NAMA_DIREKTORI_PROYEK]
-Buat dan Aktifkan Virtual EnvironmentWindows:python -m venv venv
-.\venv\Scripts\activate
-macOS/Linux:python3 -m venv venv
-source venv/bin/activate
-Instal DependensiInstal semua paket Python yang dibutuhkan:pip install Flask Flask-SQLAlchemy PyMySQL
-Konfigurasi DatabasePastikan server MySQL Anda sudah berjalan.Buat database baru dengan nama flask_auth.CREATE DATABASE flask_auth;
-Aplikasi ini dikonfigurasi untuk terhubung ke database MySQL pada mysql+pymysql://root:@localhost:3306/flask_auth. Jika kredensial database Anda (username, password, host) berbeda, silakan perbarui string koneksi SQLALCHEMY_DATABASE_URI di dalam file main.py:# di dalam file main.py
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://USER:PASSWORD@HOST/flask_auth'
-Jalankan AplikasiEksekusi file main.py untuk memulai server pengembangan Flask.python main.py
-Aplikasi akan berjalan dan dapat diakses melalui http://127.0.0.1:5000.📖 PenggunaanHalaman Produk Publik: Buka browser dan kunjungi http://127.0.0.1:5000/ untuk melihat daftar produk.Dasbor Admin: Untuk mengelola produk (tambah, edit, hapus), kunjungi halaman dasbor admin di:http://127.0.0.1:5000/dashboardSekian, terimakasih.
+# Alfaz Book Store - Product Management System
+
+A simple web application built with Flask for managing and displaying a catalog of book products. It features a public-facing product page and an admin dashboard for CRUD (Create, Read, Update, Delete) operations on products.
+
+This project was created by:
+
+  - Muhammad Ferdiansyah
+  - Faiz Rayhan Ramadhan
+  - Wahyu Dwi Saputra
+
+## ✨ Features
+
+  - **Public View**: A main page that displays all available products to users.
+  - **Product Detail Page**: Users can click on a product to see a more detailed view.
+  - **Admin Dashboard**: A central place for administrators to view, edit, and delete all products.
+  - **Add Product**: A form to add new products with details like name, description, price, stock, and an image.
+  - **Edit Product**: Update the information of existing products.
+  - **Delete Product**: Remove products from the catalog.
+  - **Image Uploads**: Supports uploading product images.
+
+## 🛠️ Technologies Used
+
+  - **Backend**: Python, Flask
+  - **Database**: Flask-SQLAlchemy, MySQL (with PyMySQL)
+  - **Frontend**: HTML, Bootstrap 5
+  - **Server**: Werkzeug (Flask's development server)
+
+## 🚀 Getting Started
+
+Follow these instructions to get a copy of the project up and running on your local machine.
+
+### Prerequisites
+
+Make sure you have the following installed:
+
+  - Python 3.x
+  - pip (Python package installer)
+  - A running MySQL server
+
+### Installation & Setup
+
+1.  **Clone the Repository**
+
+    ```bash
+    git clone https://your-repository-url.git
+    cd your-project-directory
+    ```
+
+2.  **Create and Activate a Virtual Environment**
+
+      - **Windows**:
+        ```bash
+        python -m venv venv
+        .\venv\Scripts\activate
+        ```
+      - **macOS/Linux**:
+        ```bash
+        python3 -m venv venv
+        source venv/bin/activate
+        ```
+
+3.  **Install Dependencies**
+    Install all the required Python packages:
+
+    ```bash
+    pip install Flask Flask-SQLAlchemy PyMySQL
+    ```
+
+4.  **Database Configuration**
+
+      - Make sure your MySQL server is running.
+      - Create a new database named `flask_auth`.
+        ```sql
+        CREATE DATABASE flask_auth;
+        ```
+      - The application is configured to connect to a MySQL database at `mysql+pymysql://root:@localhost:3306/flask_auth`. If your database credentials (username, password, host) are different, update the `SQLALCHEMY_DATABASE_URI` in `main.py`:
+        ```python
+        # in main.py
+        app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://YOUR_USER:YOUR_PASSWORD@YOUR_HOST/flask_auth'
+        ```
+
+5.  **Run the Application**
+    Execute the `main.py` file to start the Flask development server.
+
+    ```bash
+    python main.py
+    ```
+
+    The application will be running at `http://127.0.0.1:5000`.
+
+## Usage
+
+  - **Public Product Page**: Navigate to [http://127.0.0.1:5000/](https://www.google.com/search?q=http://127.0.0.1:5000/) to see the list of all products.
+  - **Admin Dashboard**: To manage products (add, edit, delete), go to the admin dashboard:
+    [http://127.0.0.1:5000/dashboard](http://127.0.0.1:5000/dashboard)
