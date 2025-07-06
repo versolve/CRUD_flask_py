@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preview Produk</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .product-image {
+            width: 100%;
+            height: 400px;
+            object-fit: contain;
+        }
+        .product-price {
+            font-size: 1.75rem;
+            font-weight: bold;
+            color: #0d6efd;
+        }
+    </style>
+</head>
+<body>
+    <div class="container my-5">
+        <div class="card shadow-sm">
+            <div class="row g-0">
+                <div class="col-md-5">
+                    <img src="{{ url_for('static', filename='uploads/' + product.image) }}" class="img-fluid rounded-start product-image" alt="Gambar Produk {{ product.name }}">
+                </div>
+                <div class="col-md-7">
+                    <div class="card-body p-4">
+                        <h1 class="card-title h2 mb-3">{{ product.name }}</h1>
+                        <p class="card-text text-muted">{{ product.description }}</p>
+                        
+                        <div class="my-4">
+                            <span class="product-price">Rp {{ "{:,.0f}".format(product.price).replace(',', '.') }}</span>
+                        </div>
+
+                        <div class="d-flex align-items-center mb-4">
+                            <span class="me-3">Stok Tersedia:</span>
+                            <span class="badge bg-success rounded-pill fs-6">{{ product.stock }}</span>
+                        </div>
+                        
+                        <div class="d-grid gap-2 d-md-block mt-auto">
+                            <a href="{{ url_for('index') }}" class="btn btn-outline-secondary btn-lg ms-md-2">Kembali</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
